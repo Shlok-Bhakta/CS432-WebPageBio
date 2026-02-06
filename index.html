@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shlok Bhakta - Accessible Computing Bio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Geologica:wght,CRSV@100..900,0&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-shape shape-1" aria-hidden="true"></div>
+    <div class="bg-shape shape-2" aria-hidden="true"></div>
+    
+    <header class="hero">
+        <div class="hero-content">
+            <div class="name-block">
+                <h1>Shlok Bhakta</h1>
+                <div class="title-stack">
+                    <span class="title-item">Software Developer</span>
+                    <span class="title-item">Accessibility Advocate</span>
+                </div>
+            </div>
+            <img src="professional.JPG" alt="Shlok Bhakta, wearing glasses and smiling at the camera" class="profile-photo">
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro-section" aria-labelledby="about-heading">
+            <div class="section-label">01</div>
+            <h2 id="about-heading">About Me</h2>
+            <div class="content-block">
+                <p>I'm Shlok, a <strong>software developer</strong> who believes accessible technology shouldn't be an afterthought. Living with amblyopia has taught me that good design means everyone gets to participate.</p>
+                <p><em>Accessibility isn't just a feature—it's a fundamental right.</em> I'm here to build digital experiences that actually work for all humans, not just the "average" user that doesn't exist.</p>
+            </div>
+        </section>
+
+        <section class="interests-section" aria-labelledby="interests-heading">
+            <div class="section-label">02</div>
+            <h2 id="interests-heading">What I Care About</h2>
+            <div class="interests-grid">
+                <article class="interest-card card-visual">
+                    <div class="card-number">A</div>
+                    <h3>Visual Accessibility</h3>
+                    <p>Color contrast, scalable type, screen readers, alt text—these aren't checkboxes. They're the difference between someone using your site or leaving frustrated. Having amblyopia myself means I test <strong>visual accessibility</strong> every day just by existing online.</p>
+                </article>
+                <article class="interest-card card-dev">
+                    <div class="card-number">B</div>
+                    <h3>Inclusive Development</h3>
+                    <p>Semantic HTML, keyboard nav, proper ARIA—I build this stuff from day one. Not because it's required, but because excluding people from the web is just lazy engineering.</p>
+                </article>
+                <article class="interest-card card-tech">
+                    <div class="card-number">C</div>
+                    <h3>Tech Experimentation</h3>
+                    <p>My homelab isn't just for fun—it's where I test if new tech is actually <em>usable</em> for everyone. Breaking things and rebuilding them accessibly is how we move forward.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="hobbies-section" aria-labelledby="hobbies-heading">
+            <div class="two-col-layout">
+                <div class="col-header">
+                    <div class="section-label">03</div>
+                    <h2 id="hobbies-heading">Beyond the Terminal</h2>
+                </div>
+                <div class="col-content">
+                    <p>When I'm not breaking and fixing code:</p>
+                    <ul class="hobbies-list">
+                        <li>Smashing birdies on the badminton court</li>
+                        <li>Getting way too invested in video game mechanics</li>
+                        <li>Overengineering my homelab (it's a problem)</li>
+                        <li>Testing out whatever tech dropped this week</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="collaboration-section" aria-labelledby="collaboration-heading">
+            <div class="collab-card">
+                <div class="section-label light">04</div>
+                <h2 id="collaboration-heading">Let's Build Something</h2>
+                <p>Looking for teammates who give a damn about <strong>inclusive design</strong>, <strong>assistive tech</strong>, or making the web actually work for everyone. If you're tired of performative accessibility and want to build things right, let's talk.</p>
+                
+                <div class="link-box">
+                    <p>See what other folks in class are working on: <a href="https://docs.google.com/document/d/10nTEkUx4IVWT_oC9CfM5BCgIWGQVcWJRhelf6fSZpuw/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Web Page Bio Links</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" aria-labelledby="contact-heading">
+            <div class="section-label">05</div>
+            <h2 id="contact-heading">Get In Touch</h2>
+            <p>Got a project idea? Want to collaborate? Just want to argue about the best homelab setup? Hit me up.</p>
+            
+            <form action="mailto:shlokbhakta@tamu.edu" method="post" enctype="text/plain" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required aria-required="true">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Built with care and curiosity / Shlok Bhakta 2026</p>
+    </footer>
+</body>
+</html>
