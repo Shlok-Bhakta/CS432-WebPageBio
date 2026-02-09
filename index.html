@@ -6,101 +6,98 @@
     <title>Shlok Bhakta - Accessible Computing Bio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Geologica:wght,CRSV@100..900,0&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="bg-shape shape-1" aria-hidden="true"></div>
-    <div class="bg-shape shape-2" aria-hidden="true"></div>
-    
     <header class="hero">
         <div class="hero-content">
             <div class="name-block">
                 <h1>Shlok Bhakta</h1>
                 <div class="title-stack">
                     <span class="title-item">Software Developer</span>
-                    <span class="title-item">Accessibility Advocate</span>
                 </div>
             </div>
-            <img src="professional.JPG" alt="Shlok Bhakta, wearing glasses and smiling at the camera" class="profile-photo">
+            <img src="professional.JPG" alt="Portrait of Shlok Bhakta" class="profile-photo">
         </div>
     </header>
 
     <main class="container">
         <section class="intro-section" aria-labelledby="about-heading">
-            <div class="section-label">01</div>
             <h2 id="about-heading">About Me</h2>
             <div class="content-block">
-                <p>I'm Shlok, a <strong>software developer</strong> who believes accessible technology shouldn't be an afterthought. Living with amblyopia has taught me that good design means everyone gets to participate.</p>
-                <p><em>Accessibility isn't just a feature—it's a fundamental right.</em> I'm here to build digital experiences that actually work for all humans, not just the "average" user that doesn't exist.</p>
+                <p>Hi, I'm Shlok. I write code and mess around with computers. Currently studying at Texas A&M and trying to figure out what I want to build next.</p>
+                <p>Outside of coding, you'll probably find me playing badminton, gaming, or adding unnecessary complexity to my homelab. I like breaking things and then fixing them (sometimes).</p>
             </div>
         </section>
 
         <section class="interests-section" aria-labelledby="interests-heading">
-            <div class="section-label">02</div>
-            <h2 id="interests-heading">What I Care About</h2>
+            <h2 id="interests-heading">What I'm Into</h2>
             <div class="interests-grid">
-                <article class="interest-card card-visual">
-                    <div class="card-number">A</div>
-                    <h3>Visual Accessibility</h3>
-                    <p>Color contrast, scalable type, screen readers, alt text—these aren't checkboxes. They're the difference between someone using your site or leaving frustrated. Having amblyopia myself means I test <strong>visual accessibility</strong> every day just by existing online.</p>
+                <article class="interest-card">
+                    <h3>Clean Code</h3>
+                    <p>I like writing code that's actually readable. Semantic HTML, good structure, all that. Makes life easier for everyone who has to work with it later (including future me).</p>
                 </article>
-                <article class="interest-card card-dev">
-                    <div class="card-number">B</div>
-                    <h3>Inclusive Development</h3>
-                    <p>Semantic HTML, keyboard nav, proper ARIA—I build this stuff from day one. Not because it's required, but because excluding people from the web is just lazy engineering.</p>
+                <article class="interest-card">
+                    <h3>UI That Works</h3>
+                    <p>Good interfaces shouldn't require a manual to figure out. I care about making stuff that just works, whether you're using a mouse, keyboard, or whatever.</p>
                 </article>
-                <article class="interest-card card-tech">
-                    <div class="card-number">C</div>
-                    <h3>Tech Experimentation</h3>
-                    <p>My homelab isn't just for fun—it's where I test if new tech is actually <em>usable</em> for everyone. Breaking things and rebuilding them accessibly is how we move forward.</p>
+                <article class="interest-card">
+                    <h3>Breaking Things</h3>
+                    <p>My homelab is where I experiment. Spin up servers, try new tools, break stuff, fix it. It's how I learn what actually works in the real world.</p>
+                </article>
+                <article class="interest-card">
+                    <h3>App Hopping</h3>
+                    <p>I spend way too much time on AlternativeTo looking for the "perfect" productivity setup. I've migrated between Notion, Obsidian, Google Calendar, and like 20 other apps trying to find a workflow that doesn't exist. Still searching.</p>
                 </article>
             </div>
         </section>
 
         <section class="hobbies-section" aria-labelledby="hobbies-heading">
-            <div class="two-col-layout">
-                <div class="col-header">
-                    <div class="section-label">03</div>
-                    <h2 id="hobbies-heading">Beyond the Terminal</h2>
+            <h2 id="hobbies-heading">When I'm Not Coding</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-item">
+                    <img src="https://api.iconify.design/mdi:badminton.svg?color=%23d4895c" alt="" class="hobby-icon" aria-hidden="true">
+                    <p>Playing badminton and trying not to injure myself</p>
                 </div>
-                <div class="col-content">
-                    <p>When I'm not breaking and fixing code:</p>
-                    <ul class="hobbies-list">
-                        <li>Smashing birdies on the badminton court</li>
-                        <li>Getting way too invested in video game mechanics</li>
-                        <li>Overengineering my homelab (it's a problem)</li>
-                        <li>Testing out whatever tech dropped this week</li>
-                    </ul>
+                <div class="hobby-item">
+                    <img src="https://api.iconify.design/pixel:gaming.svg?color=%23d4895c" alt="" class="hobby-icon" aria-hidden="true">
+                    <p>Gaming and getting way too deep into mechanics</p>
+                </div>
+                <div class="hobby-item">
+                    <img src="https://api.iconify.design/mynaui:servers-solid.svg?color=%23d4895c" alt="" class="hobby-icon" aria-hidden="true">
+                    <p>Overengineering my homelab (it's a problem)</p>
+                </div>
+                <div class="hobby-item">
+                    <img src="https://api.iconify.design/solar:test-tube-bold.svg?color=%23d4895c" alt="" class="hobby-icon" aria-hidden="true">
+                    <p>Testing new tech to see what's actually worth using</p>
                 </div>
             </div>
         </section>
 
         <section class="collaboration-section" aria-labelledby="collaboration-heading">
             <div class="collab-card">
-                <div class="section-label light">04</div>
-                <h2 id="collaboration-heading">Let's Build Something</h2>
-                <p>Looking for teammates who give a damn about <strong>inclusive design</strong>, <strong>assistive tech</strong>, or making the web actually work for everyone. If you're tired of performative accessibility and want to build things right, let's talk.</p>
+                <h2 id="collaboration-heading">Want to Work Together?</h2>
+                <p>Looking for people to team up with on projects. If you're into building cool stuff and don't mind experimenting, let's talk.</p>
                 
                 <div class="link-box">
-                    <p>See what other folks in class are working on: <a href="https://docs.google.com/document/d/10nTEkUx4IVWT_oC9CfM5BCgIWGQVcWJRhelf6fSZpuw/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Web Page Bio Links</a></p>
+                    <p>See what everyone else is working on: <a href="https://docs.google.com/document/d/10nTEkUx4IVWT_oC9CfM5BCgIWGQVcWJRhelf6fSZpuw/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Web Page Bio Links</a></p>
                 </div>
             </div>
         </section>
 
         <section class="contact-section" aria-labelledby="contact-heading">
-            <div class="section-label">05</div>
-            <h2 id="contact-heading">Get In Touch</h2>
-            <p>Got a project idea? Want to collaborate? Just want to argue about the best homelab setup? Hit me up.</p>
+            <h2 id="contact-heading">Say Hi</h2>
+            <p>Got a project? Want to collaborate? Or just want to argue about Docker vs Podman? Hit me up.</p>
             
             <form action="mailto:shlokbhakta@tamu.edu" method="post" enctype="text/plain" class="contact-form">
                 <div class="form-group">
-                    <label for="name">Your Name</label>
+                    <label for="name">Name</label>
                     <input type="text" id="name" name="name" required aria-required="true">
                 </div>
                 
                 <div class="form-group">
-                    <label for="email">Your Email</label>
+                    <label for="email">Email</label>
                     <input type="email" id="email" name="email" required aria-required="true">
                 </div>
                 
@@ -109,13 +106,13 @@
                     <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
                 </div>
                 
-                <button type="submit" class="submit-button">Send Message</button>
+                <button type="submit" class="submit-button">Send</button>
             </form>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>Built with care and curiosity / Shlok Bhakta 2026</p>
+        <p>Built with caffeine and curiosity / Shlok Bhakta 2026</p>
     </footer>
 </body>
 </html>

@@ -1,620 +1,384 @@
-/* ========================================
-   VARIABLES - Your Bold Color Palette
-   ======================================== */
+/* ============================================
+   Shlok Bhakta - Bio Page (Standard CSS)
+   Clean, accessible, professional styling
+   ============================================ */
 
-:root {
-    --text: #090104;
-    --background: #fdf2f6;
-    --primary: #dd2779;
-    --secondary: #ecab89;
-    --accent: #e6a360;
-    
-    --font-body: 'Atkinson Hyperlegible', sans-serif;
-    --font-display: 'Geologica', sans-serif;
-}
-
-/* ========================================
-   BASE & RESET
-   ======================================== */
-
-* {
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --color-bg: #f5f5f5;
+    --color-text: #1a1a1a;
+    --color-primary: #1a4d6d;
+    --color-accent: #d4895c;
+    --color-light: #ffffff;
+    --color-border: #cccccc;
+    --color-muted: #666666;
+    --font-body: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, sans-serif;
+    --max-width: 800px;
+    --section-padding: 3rem;
+}
+
+/* Base */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: var(--font-body);
-    font-size: 1.125rem;
-    line-height: 1.65;
-    color: var(--text);
-    background: var(--background);
-    overflow-x: hidden;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
 }
 
-/* ========================================
-   BACKGROUND SHAPES - Distinctive Visual
-   ======================================== */
-
-.bg-shape {
-    position: fixed;
-    border-radius: 50%;
-    opacity: 0.08;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.shape-1 {
-    width: 600px;
-    height: 600px;
-    background: var(--primary);
-    top: -200px;
-    right: -150px;
-    animation: float 25s ease-in-out infinite;
-}
-
-.shape-2 {
-    width: 400px;
-    height: 400px;
-    background: var(--accent);
-    bottom: -100px;
-    left: -100px;
-    animation: float 20s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(30px, -30px) rotate(5deg); }
-    66% { transform: translate(-20px, 20px) rotate(-5deg); }
-}
-
-/* ========================================
-   HERO - Big, Bold, Asymmetric
-   ======================================== */
-
-.hero {
-    position: relative;
-    z-index: 1;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, var(--primary) 0%, #b91f61 100%);
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 80%;
-    height: 200%;
-    background: rgba(255, 255, 255, 0.05);
-    transform: rotate(-15deg);
-    pointer-events: none;
+/* Header / Hero */
+header {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 4rem 1.5rem;
 }
 
 .hero-content {
-    position: relative;
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 4rem;
-    align-items: center;
-}
-
-.name-block h1 {
-    font-family: var(--font-display);
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 900;
-    color: #fff;
-    line-height: 0.95;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.03em;
-    text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.title-stack {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
 }
 
-.title-item {
-    display: inline-block;
-    font-size: 1.125rem;
+h1 {
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 0.5rem 1.25rem;
-    border-radius: 2rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    width: fit-content;
-}
-
-.profile-photo {
-    width: 240px;
-    height: 240px;
-    border-radius: 20px;
-    object-fit: cover;
-    border: 6px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    transform: rotate(-3deg);
-    transition: transform 0.4s ease;
-}
-
-.profile-photo:hover {
-    transform: rotate(0deg) scale(1.05);
-}
-
-/* ========================================
-   MAIN CONTAINER & SECTIONS
-   ======================================== */
-
-.container {
-    position: relative;
-    z-index: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-}
-
-section {
-    position: relative;
-    margin-bottom: 6rem;
-}
-
-.section-label {
-    font-family: var(--font-display);
-    font-size: 5rem;
-    font-weight: 900;
-    color: var(--primary);
-    opacity: 0.15;
-    position: absolute;
-    top: -2rem;
-    left: -1rem;
-    line-height: 1;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.section-label.light {
-    color: rgba(255, 255, 255, 0.3);
-}
-
-h2 {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    color: var(--text);
-    margin-bottom: 2rem;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-}
-
-h3 {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     line-height: 1.2;
 }
 
-p {
-    margin-bottom: 1.25rem;
-    line-height: 1.7;
+.title-item {
+    display: block;
+    font-size: 1.125rem;
+    opacity: 0.9;
 }
 
-/* ========================================
-   INTRO SECTION - Bold Statement
-   ======================================== */
-
-.intro-section {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 3rem;
+.title-item + .title-item {
+    margin-top: 0.25rem;
 }
 
-.intro-section .section-label {
-    position: relative;
-    top: 0;
-    left: 0;
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    object-position: center top;
+    border: 4px solid var(--color-light);
+    flex-shrink: 0;
 }
 
-.content-block {
-    background: #fff;
-    padding: 2.5rem;
-    border-radius: 12px;
-    border-left: 8px solid var(--primary);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+/* Main Container */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-/* ========================================
-   INTERESTS GRID - Card System
-   ======================================== */
-
-.interests-section {
-    padding-top: 2rem;
+/* Sections */
+section {
+    padding: var(--section-padding) 0;
+    border-bottom: 1px solid var(--color-border);
 }
 
-.interests-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+section:last-of-type {
+    border-bottom: none;
 }
 
-.interest-card {
-    position: relative;
-    background: #fff;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-}
-
-.interest-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: var(--primary);
-    transition: height 0.3s ease;
-}
-
-.interest-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(221, 39, 121, 0.2);
-}
-
-.interest-card:hover::before {
-    height: 12px;
-}
-
-.card-visual::before { background: var(--primary); }
-.card-dev::before { background: var(--secondary); }
-.card-tech::before { background: var(--accent); }
-
-.card-number {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background: var(--background);
-    border-radius: 50%;
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
     margin-bottom: 1.5rem;
 }
 
-.card-dev .card-number { color: var(--secondary); }
-.card-tech .card-number { color: var(--accent); }
-
-/* ========================================
-   HOBBIES - Two Column Layout
-   ======================================== */
-
-.hobbies-section {
-    background: #fff;
-    padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
 }
 
+p {
+    margin-bottom: 1rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* Content Blocks */
+.content-block p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+/* Interest Cards */
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.interest-card {
+    background-color: var(--color-light);
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+}
+
+.interest-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+/* Two Column Layout */
 .two-col-layout {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
 }
 
-.hobbies-list {
-    list-style: none;
-    display: grid;
+.col-header {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
 }
 
-.hobbies-list li {
-    position: relative;
-    padding: 1rem 1rem 1rem 2rem;
-    background: var(--background);
-    border-radius: 8px;
-    border-left: 4px solid var(--accent);
-    transition: all 0.3s ease;
+/* Hobbies Grid */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
-.hobbies-list li::before {
-    content: '→';
-    position: absolute;
-    left: 0.75rem;
-    color: var(--accent);
-    font-weight: 700;
-    transition: transform 0.3s ease;
-}
-
-.hobbies-list li:hover {
-    border-left-width: 8px;
-    padding-left: 2.5rem;
-    background: linear-gradient(90deg, rgba(230, 163, 96, 0.1), var(--background));
-}
-
-.hobbies-list li:hover::before {
-    transform: translateX(5px);
-}
-
-/* ========================================
-   COLLABORATION - Standout CTA
-   ======================================== */
-
-.collab-card {
-    position: relative;
-    background: linear-gradient(135deg, var(--primary) 0%, #b91f61 100%);
-    color: #fff;
-    padding: 4rem 3rem;
-    border-radius: 16px;
-    box-shadow: 0 12px 40px rgba(221, 39, 121, 0.3);
-    overflow: hidden;
-}
-
-.collab-card::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -10%;
-    width: 40%;
-    height: 200%;
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateY(-50%) rotate(15deg);
-    pointer-events: none;
-}
-
-.collab-card h2 {
-    color: #fff;
-    position: relative;
-    z-index: 1;
-}
-
-.collab-card p {
-    position: relative;
-    z-index: 1;
-    opacity: 0.95;
-    font-size: 1.125rem;
-}
-
-.link-box {
-    position: relative;
-    z-index: 1;
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-}
-
-.link-box a {
-    color: #fff;
-    font-weight: 700;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
-    text-decoration-color: var(--accent);
-    transition: text-decoration-color 0.2s ease;
-}
-
-.link-box a:hover {
-    text-decoration-color: #fff;
-}
-
-.link-box a:focus {
-    outline: 3px solid var(--accent);
-    outline-offset: 4px;
-    border-radius: 4px;
-}
-
-/* ========================================
-   CONTACT FORM - Clean & Functional
-   ======================================== */
-
-.contact-section {
-    background: #fff;
-    padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.contact-form {
-    margin-top: 2rem;
-    max-width: 600px;
-}
-
-.form-group {
-    margin-bottom: 2rem;
-}
-
-.form-group label {
-    display: block;
-    font-family: var(--font-display);
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.75rem;
-    font-size: 1rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
+.hobby-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     padding: 1rem;
-    border: 3px solid var(--background);
-    border-radius: 8px;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--text);
-    background: var(--background);
-    transition: all 0.2s ease;
+    background-color: var(--color-light);
+    border: 1px solid var(--color-border);
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    background: #fff;
-    box-shadow: 0 0 0 4px rgba(221, 39, 121, 0.1);
+.hobby-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
 }
 
-.submit-button {
-    background: var(--primary);
-    color: #fff;
-    font-family: var(--font-display);
-    font-size: 1.125rem;
-    font-weight: 700;
-    padding: 1rem 2.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 16px rgba(221, 39, 121, 0.3);
-}
-
-.submit-button:hover {
-    background: #b91f61;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(221, 39, 121, 0.4);
-}
-
-.submit-button:focus {
-    outline: 3px solid var(--accent);
-    outline-offset: 4px;
-}
-
-.submit-button:active {
-    transform: translateY(0);
-}
-
-/* ========================================
-   FOOTER
-   ======================================== */
-
-.site-footer {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 3rem 2rem;
-    background: #fff;
-    border-top: 3px solid var(--background);
-    color: var(--text);
-    opacity: 0.7;
+.hobby-item p {
+    margin: 0;
     font-size: 0.95rem;
 }
 
-/* ========================================
-   TYPOGRAPHY EMPHASIS
-   ======================================== */
+/* Collaboration Card */
+.collab-card {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 2rem;
+    margin-top: 1.5rem;
+}
 
-strong {
+.collab-card h2 {
+    color: var(--color-light);
+}
+
+.link-box {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+.link-box a {
+    color: var(--color-accent);
     font-weight: 700;
-    color: var(--primary);
 }
 
-em {
-    font-style: italic;
-    color: var(--text);
-    background: linear-gradient(to right, rgba(221, 39, 121, 0.15), transparent);
-    padding: 0 0.25rem;
+.link-box a:hover {
+    color: var(--color-light);
 }
 
+/* Contact Form */
+.contact-form {
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: var(--color-light);
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    border: none;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: var(--color-primary);
+}
+
+.submit-button:focus {
+    outline: 2px solid var(--color-text);
+    outline-offset: 2px;
+}
+
+/* Links */
 a {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s ease;
+    color: var(--color-primary);
+    text-decoration: underline;
 }
 
 a:hover {
-    color: var(--accent);
+    color: var(--color-accent);
 }
 
 a:focus {
-    outline: 3px solid var(--primary);
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
-    border-radius: 2px;
 }
 
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-text);
+    color: var(--color-light);
+    margin-top: 2rem;
+}
 
-@media (max-width: 900px) {
+/* Responsive */
+@media (max-width: 768px) {
     .hero-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         text-align: center;
-        gap: 2rem;
+        gap: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
     }
     
     .profile-photo {
-        margin: 0 auto;
+        width: 140px;
+        height: 140px;
     }
     
-    .title-item {
-        margin: 0 auto;
-    }
-    
-    .intro-section,
     .two-col-layout {
         grid-template-columns: 1fr;
-    }
-    
-    .section-label {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 640px) {
-    body {
-        font-size: 1rem;
-    }
-    
-    .hero {
-        min-height: auto;
-        padding: 2rem 1.5rem;
-    }
-    
-    .container {
-        padding: 3rem 1.5rem;
-    }
-    
-    .profile-photo {
-        width: 180px;
-        height: 180px;
-    }
-    
-    .content-block,
-    .hobbies-section,
-    .contact-section {
-        padding: 2rem 1.5rem;
-    }
-    
-    .collab-card {
-        padding: 2.5rem 2rem;
     }
     
     .interests-grid {
         grid-template-columns: 1fr;
     }
     
-    .interest-card {
-        padding: 2rem;
+    .hobbies-grid {
+        grid-template-columns: 1fr;
     }
+    
+    :root {
+        --section-padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    header {
+        padding: 3rem 1rem;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --color-bg: #ffffff;
+        --color-text: #000000;
+        --color-primary: #000080;
+        --color-border: #000000;
+        --color-muted: #333333;
+    }
+    
+    .profile-photo {
+        border-width: 3px;
+    }
+    
+    input:focus,
+    textarea:focus,
+    a:focus,
+    .submit-button:focus {
+        outline-width: 3px;
+    }
+}
+
+/* Focus Visible */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
 }
