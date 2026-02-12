@@ -32,10 +32,40 @@ html {
 
 body {
     font-family: var(--font-body);
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--color-text);
-    background-color: var(--color-bg);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--background);
+    overflow-x: hidden;
+    display: block;
+}
+
+/* Layout container for main structure */
+.layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Grid layout for content sections */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Flexbox utilities */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Header / Hero */
@@ -57,7 +87,120 @@ header {
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: fit-content;
+}
+
+.profile-photo {
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: rotate(-3deg);
+    transition: transform 0.4s ease;
+}
+
+.profile-photo:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.decorative-image {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.profile-photo {
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: rotate(-3deg);
+    transition: transform 0.4s ease;
+}
+
+.profile-photo:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.decorative-image {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ========================================
+   MAIN CONTAINER & SECTIONS
+   ======================================== */
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+section {
+    position: relative;
+    margin-bottom: 6rem;
+}
+
+.section-label {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--primary);
+    opacity: 0.15;
+    position: absolute;
+    top: -2rem;
+    left: -1rem;
+    line-height: 1;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.section-label.light {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1rem;
     line-height: 1.2;
 }
 
@@ -325,60 +468,47 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.75rem;
+/* ========================================
+   ACCESSIBILITY - Contrast Preferences
+   ======================================== */
+
+@media (prefers-contrast: more) {
+    body {
+        border: 2px solid currentColor;
     }
     
-    h2 {
-        font-size: 1.5rem;
-    }
-    
-    header {
-        padding: 3rem 1rem;
+    a, button {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
     }
 }
 
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-    
-    * {
-        animation: none !important;
-        transition: none !important;
+@media (prefers-contrast: less) {
+    body {
+        opacity: 0.8;
     }
 }
 
-/* High Contrast Mode */
-@media (prefers-contrast: high) {
-    :root {
-        --color-bg: #ffffff;
-        --color-text: #000000;
-        --color-primary: #000080;
-        --color-border: #000000;
-        --color-muted: #333333;
-    }
-    
-    .profile-photo {
-        border-width: 3px;
-    }
-    
-    input:focus,
-    textarea:focus,
-    a:focus,
-    .submit-button:focus {
-        outline-width: 3px;
-    }
+/* ========================================
+   LIST STYLES
+   ======================================== */
+
+ul, ol {
+    list-style-position: inside;
+    margin: 1rem 0;
+    padding-left: 1.5rem;
 }
 
-/* Focus Visible */
-*:focus:not(:focus-visible) {
-    outline: none;
+li {
+    margin-bottom: 0.5rem;
 }
 
-*:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
+/* ========================================
+   FORM SUBMIT ELEMENTS
+   ======================================== */
+
+input[type="submit"],
+button[type="submit"] {
+    cursor: pointer;
+    display: inline-block;
 }
